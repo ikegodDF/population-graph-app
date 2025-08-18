@@ -1,5 +1,11 @@
+import SelectCard from "../components/SelectCard";
+
 const Page = () => {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <SelectCard />
+    </div>
+  );
 };
 
 export default Page;
