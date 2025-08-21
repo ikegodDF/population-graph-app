@@ -12,9 +12,9 @@ import {
 import { usePopulation } from "../hooks/usePopulation";
 import { usePrefectures } from "../hooks/usePrefectures";
 
-type GraphProps = { selected?: number[] };
+type GraphProps = { selected?: number[]; activeTab?: string };
 
-const GraphCard = ({ selected = [] }: GraphProps) => {
+const GraphCard = ({ selected = [], activeTab = "総人口" }: GraphProps) => {
   const prefectures = usePrefectures();
   const codeToName = useMemo(() => {
     const map = new Map<number, string>();
@@ -27,25 +27,25 @@ const GraphCard = ({ selected = [] }: GraphProps) => {
   const years = useMemo(() => {
     const set = new Set<number>();
     for (const code of selected) {
-      const s = populationByPref[code]?.["総人口"] ?? [];
+      const s = populationByPref[code]?.[activeTab] ?? [];
       s.forEach((pt) => set.add(pt.year));
     }
     return Array.from(set).sort((a, b) => a - b);
-  }, [selected, populationByPref]);
+  }, [selected, activeTab, populationByPref]);
 
   const chartData = useMemo(() => {
     return years.map((year) => {
       const row: Record<string, number | string> = { year };
       for (const code of selected) {
         const label = codeToName.get(code) ?? String(code);
-        const pt = (populationByPref[code]?.["総人口"] ?? []).find(
+        const pt = (populationByPref[code]?.[activeTab] ?? []).find(
           (p) => p.year === year
         );
         row[label] = pt?.value ?? 0;
       }
       return row;
     });
-  }, [years, selected, populationByPref, codeToName]);
+  }, [years, selected, activeTab, populationByPref, codeToName]);
 
   const COLORS = [
     "#8884d8",
@@ -63,7 +63,15 @@ const GraphCard = ({ selected = [] }: GraphProps) => {
   );
 
   return (
-    <div style={{ width: "100%", height: 400 }}>
+    <div
+      className="p-4"
+      style={{
+        width: "100%",
+        height: 400,
+        border: "1px solid #e5e7eb",
+        borderRadius: 8,
+      }}
+    >
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={chartData}
