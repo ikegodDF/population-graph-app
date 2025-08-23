@@ -1,69 +1,46 @@
-# React + TypeScript + Vite
+# 都道府県別人口推移グラフ SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+コーディング試験で作成したアプリケーションです。
+React + TypeScript + Vite で構築された都道府県別人口推移グラフを表示する Single Page Application です。
 
-Currently, two official plugins are available:
+## 機能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- APIから都道府県データを取得し、チェックボックスを生成
+- 選択した都道府県の人口データをAPIから取得し人口推移グラフを作成
+- 人口種別のグラフを作成&切り替え
 
-## Expanding the ESLint configuration
+## 🛠️ 技術スタック
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **フレームワーク**: React 19.1.1
+- **言語**: TypeScript 5.8.3
+- **ビルドツール**: Vite 7.1.0
+- **グラフライブラリ**: Recharts 3.1.2
+- **テスト**: Vitest + React Testing Library
+- **リンター**: ESLint + Prettier
+- **スタイリング**: カスタムCSS
 
-```js
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+## 📁 プロジェクト構造
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+src/
+├── components/          # React コンポーネント
+│   ├── CheckBox/       # 都道府県チェックボックス
+│   ├── SelectCard/     # 都道府県選択カード
+│   ├── SwitchingGraphTab/ # 人口種別切り替えタブ
+│   └── GraphCard/      # 人口推移グラフ
+├── hooks/              # カスタムフック
+│   ├── usePrefectures.ts    # 都道府県データ取得
+│   └── usePopulation.ts     # 人口データ取得
+├── pages/              # ページコンポーネント
+├── tests/              # テストファイル
+│   ├── unit/           # 単体テスト
+│   └── integration/    # 統合テスト
+└── App.tsx             # メインアプリケーション
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 設定ファイル
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+- `eslint.config.js` - ESLint設定
+- `prettier.config.js` - Prettier設定
+- `vitest.config.ts` - Vitest設定
+- `tsconfig.json` - TypeScript設定
