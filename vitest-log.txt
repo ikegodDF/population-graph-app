@@ -1,0 +1,248 @@
+
+ RUN  v3.2.4 /app
+
+stderr | src/tests/integration/APIIntegration.test.tsx > API Integration Tests > fetches population data when prefecture is selected
+Cannot update a component (`Page`) while rendering a different component (`SelectCard`). To locate the bad setState() call inside `SelectCard`, follow the stack trace as described in https://react.dev/link/setstate-in-render
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/APIIntegration.test.tsx > API Integration Tests > handles complete user flow with real API data
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/APIIntegration.test.tsx > API Integration Tests > handles complete user flow with real API data
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/APIIntegration.test.tsx > API Integration Tests > handles multiple prefecture selection with real data
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/APIIntegration.test.tsx > API Integration Tests > switches between population types with real data
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/APIIntegration.test.tsx > API Integration Tests > switches between population types with real data
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/APIIntegration.test.tsx > API Integration Tests > switches between population types with real data
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/APIIntegration.test.tsx > API Integration Tests > switches between population types with real data
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+ ❯ src/tests/integration/APIIntegration.test.tsx (6 tests | 1 failed) 1460ms
+   ✓ API Integration Tests > fetches and displays prefectures from actual API  375ms
+   ✓ API Integration Tests > fetches population data when prefecture is selected 260ms
+   ✓ API Integration Tests > handles complete user flow with real API data 251ms
+   ✓ API Integration Tests > handles multiple prefecture selection with real data 259ms
+   ✓ API Integration Tests > switches between population types with real data  311ms
+   × API Integration Tests > handles API errors gracefully 3ms
+     → 'process.env' only accepts a configurable, writable, and enumerable data descriptor
+ ✓ src/tests/unit/CheckBox.test.tsx (4 tests) 8ms
+ ✓ src/tests/unit/SwitchingGraphTab.test.tsx (7 tests) 7ms
+ ✓ src/tests/unit/SelectCard.test.tsx (6 tests) 11ms
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > handles complete user flow: select prefecture and change population type
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > handles complete user flow: select prefecture and change population type
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > handles complete user flow: select prefecture and change population type
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > handles multiple prefecture selection
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > handles multiple prefecture selection
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > maintains state consistency across components
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > maintains state consistency across components
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > handles prefecture deselection
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > updates graph when switching population types
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > updates graph when switching population types
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > updates graph when switching population types
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > updates graph when switching population types
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/integration/Page.test.tsx > Page Integration (Real API) > updates graph when switching population types
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+ ✓ src/tests/integration/Page.test.tsx (6 tests) 1451ms
+stderr | src/tests/unit/GraphCard.test.tsx > GraphCard > renders section title with active tab and prefecture count
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/unit/GraphCard.test.tsx > GraphCard > renders chart container when prefectures are selected
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/unit/GraphCard.test.tsx > GraphCard > updates title when active tab changes
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/unit/GraphCard.test.tsx > GraphCard > updates title when selected prefectures change
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/unit/GraphCard.test.tsx > GraphCard > handles single prefecture selection
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/unit/GraphCard.test.tsx > GraphCard > handles multiple prefecture selection
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/unit/GraphCard.test.tsx > GraphCard > renders with different population types
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | src/tests/unit/GraphCard.test.tsx > GraphCard > maintains chart container when switching between population types
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(0) and height(0) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+ ✓ src/tests/unit/GraphCard.test.tsx (9 tests) 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/tests/integration/APIIntegration.test.tsx > API Integration Tests > handles API errors gracefully
+TypeError: 'process.env' only accepts a configurable, writable, and enumerable data descriptor
+ ❯ src/tests/integration/APIIntegration.test.tsx:227:12
+    225|     // 無効なAPIキーでテスト
+    226|     const originalApiKey = import.meta.env.VITE_RESAS_API_KEY;
+    227|     Object.defineProperty(import.meta.env, "VITE_RESAS_API_KEY", {
+       |            ^
+    228|       value: "invalid-key",
+    229|       writable: true,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 5 passed (6)
+      Tests  1 failed | 37 passed (38)
+   Start at  09:03:19
+   Duration  3.43s (transform 106ms, setup 60ms, collect 186ms, tests 2.95s, environment 144ms, prepare 27ms)
+

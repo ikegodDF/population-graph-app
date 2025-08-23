@@ -26,23 +26,41 @@ export const usePopulation = (prefCodes: number[]) => {
       }
 
       const requests = prefCodes.map(async (prefCode) => {
-        const url = new URL(
-          "https://yumemi-frontend-engineer-codecheck-api.vercel.app/api/v1/population/composition/perYear"
-        );
-        url.searchParams.append("prefCode", prefCode.toString());
-        const res = await fetch(url.toString(), {
-          headers: {
-            "X-API-KEY": import.meta.env.VITE_RESAS_API_KEY || "",
-          },
-        });
-        const json = await res.json();
-        const series: PopulationSeries = {};
-        json.result.data.map(
-          (type: { label: string; data: PopulationPoint[] }) => {
-            series[type.label] = type.data;
+        try {
+          const url = new URL(
+            "https://yumemi-frontend-engineer-codecheck-api.vercel.app/api/v1/population/composition/perYear"
+          );
+          url.searchParams.append("prefCode", prefCode.toString());
+          const res = await fetch(url.toString(), {
+            headers: {
+              "X-API-KEY": import.meta.env.VITE_RESAS_API_KEY || "",
+            },
+          });
+
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
           }
-        );
-        return [prefCode, series] as const;
+
+          const json = await res.json();
+          const series: PopulationSeries = {};
+
+          if (json && json.result && json.result.data) {
+            json.result.data.map(
+              (type: { label: string; data: PopulationPoint[] }) => {
+                series[type.label] = type.data;
+              }
+            );
+          }
+
+          return [prefCode, series] as const;
+        } catch (error) {
+          console.error(
+            `Failed to fetch population for prefCode ${prefCode}:`,
+            error
+          );
+          // エラー時は空のシリーズを返す
+          return [prefCode, {}] as const;
+        }
       });
 
       const entries = await Promise.all(requests);

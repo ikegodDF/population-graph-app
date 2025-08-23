@@ -17,9 +17,21 @@ export const usePrefectures = () => {
         },
       }
     )
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => {
-        setPrefectures(data.result);
+        if (data && data.result) {
+          setPrefectures(data.result);
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to fetch prefectures:", error);
+        // エラー時は空配列を設定して、アプリが続行できるようにする
+        setPrefectures([]);
       });
   }, []);
 
