@@ -71,7 +71,6 @@ export const usePopulation = (prefCodes: number[]) => {
         map[code] = series;
       }
       setPopulationByPrefCode(map);
-      console.log(map);
     };
 
     fetchPopulation();
