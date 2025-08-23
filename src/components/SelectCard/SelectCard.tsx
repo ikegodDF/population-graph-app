@@ -1,6 +1,7 @@
 import { useState } from "react";
-import CheckBox from "./CheckBox";
-import { usePrefectures } from "../hooks/usePrefectures";
+import CheckBox from "../CheckBox/CheckBox";
+import { usePrefectures } from "../../hooks/usePrefectures";
+import "./SelectCard.css";
 
 const SelectCard = ({
   onChange,
@@ -18,7 +19,6 @@ const SelectCard = ({
     const target = prefectures.find((p) => p.prefCode === prefCode);
     if (!target) return;
 
-    // 怒られる
     setSelectedCodes((prev) => {
       const next = prev.includes(target.prefCode)
         ? prev.filter((c) => c !== target.prefCode)
@@ -29,16 +29,9 @@ const SelectCard = ({
   };
 
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          gap: 8,
-          rowGap: 8,
-        }}
-      >
+    <div className="card">
+      <h2 className="text-xl font-semibold mb-4">都道府県を選択</h2>
+      <div className="checkbox-container">
         {prefectures.map((prefecture) => (
           <CheckBox
             key={prefecture.prefCode}
@@ -47,13 +40,18 @@ const SelectCard = ({
           />
         ))}
       </div>
-      <div className="flex flex-col gap-2">
-        {selectedCodes.map((prefCode) => (
-          <p key={prefCode}>
-            {prefectures.find((p) => p.prefCode === prefCode)?.prefName}
-          </p>
-        ))}
-      </div>
+      {selectedCodes.length > 0 && (
+        <div className="selected-list">
+          <h3 className="text-sm font-medium mb-2">選択された都道府県:</h3>
+          <div>
+            {selectedCodes.map((prefCode) => (
+              <span key={prefCode} className="selected-item">
+                {prefectures.find((p) => p.prefCode === prefCode)?.prefName}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

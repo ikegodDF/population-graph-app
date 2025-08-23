@@ -9,8 +9,9 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { usePopulation } from "../hooks/usePopulation";
-import { usePrefectures } from "../hooks/usePrefectures";
+import { usePopulation } from "../../hooks/usePopulation";
+import { usePrefectures } from "../../hooks/usePrefectures";
+import "./GraphCard.css";
 
 type GraphProps = { selected?: number[]; activeTab?: string };
 
@@ -63,44 +64,45 @@ const GraphCard = ({ selected = [], activeTab = "総人口" }: GraphProps) => {
   );
 
   return (
-    <div
-      className="p-4"
-      style={{
-        width: "100%",
-        height: 400,
-        border: "1px solid #e5e7eb",
-        borderRadius: 8,
-      }}
-    >
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          data={chartData}
-          margin={{ top: 16, right: 24, left: 72, bottom: 16 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year" />
-          <YAxis
-            width={64}
-            tickFormatter={(v) =>
-              new Intl.NumberFormat("ja-JP", { notation: "compact" }).format(
-                v as number
-              )
-            }
-            tickLine={false}
-          />
-          <Tooltip />
-          <Legend />
-          {lineLabels.map((label, idx) => (
-            <Line
-              key={label}
-              type="monotone"
-              dataKey={label}
-              stroke={COLORS[idx % COLORS.length]}
-              dot={true}
+    <div className="card graph-container">
+      <h2 className="text-xl font-semibold mb-4">
+        {activeTab}の推移 ({selected.length}都道府県)
+      </h2>
+      {selected.length === 0 ? (
+        <div className="flex items-center justify-center h-full">
+          <p className="text-gray-500">都道府県を選択してください</p>
+        </div>
+      ) : (
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart
+            data={chartData}
+            margin={{ top: 16, right: 24, left: 72, bottom: 16 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="year" />
+            <YAxis
+              width={64}
+              tickFormatter={(v) =>
+                new Intl.NumberFormat("ja-JP", { notation: "compact" }).format(
+                  v as number
+                )
+              }
+              tickLine={false}
             />
-          ))}
-        </LineChart>
-      </ResponsiveContainer>
+            <Tooltip />
+            <Legend />
+            {lineLabels.map((label, idx) => (
+              <Line
+                key={label}
+                type="monotone"
+                dataKey={label}
+                stroke={COLORS[idx % COLORS.length]}
+                dot={true}
+              />
+            ))}
+          </LineChart>
+        </ResponsiveContainer>
+      )}
     </div>
   );
 };
